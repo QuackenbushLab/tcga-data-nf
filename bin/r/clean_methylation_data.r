@@ -104,7 +104,7 @@ cleanMethylationData = function(meth_df, npn=T, mval=F, diagnostic_pca = NULL, t
     return(transf_data)
   }
   
-  if(npn)
+  if(!mval & npn)
   {
     # do the nonparanormal transformation
     transf_data = data.frame(huge.npn(meth_dfComplete[,-1]))
